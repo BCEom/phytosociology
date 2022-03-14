@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WEB1 - Welcome</title>
+    <title>WEB1_Welcome</title>
     <meta charset="utf-8">
-     #map_ma {width:400px; height:400px}
 </head>
     
 <body>
@@ -20,10 +19,19 @@
         웹(WEB)은 도널드 커누스가 제안한 프로그래밍 시스템이다
     </p>
     
-    <div id="map_ma"></div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ1cgqq3WIxCGNU52iaSxiupM83_f8NOw&callback=initMap"></script>
+    <div id="googleMap" style="width: 100%;height: 700px;"></div>
     <script>
-        var map; function initmap() {map = new google.maps.Map(document.getElementById('map_ma'), {center: {lat: 37.551073, lng: 126.987893}, zoom: 15})}
-    </script>
+       function myMap(){
+          var mapOptions = { 
+                center:new google.maps.LatLng(51.508742, -0.120850),
+                zoom:5
+          };
+
+          var map = new google.maps.Map( 
+                 document.getElementById("googleMap") 
+                , mapOptions );
+       }
+    </script> 
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=myMap"></script>
   </body>
 </html>
