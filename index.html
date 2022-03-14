@@ -3,10 +3,10 @@
 <head>
     <title>WEB1 - Welcome</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ1cgqq3WIxCGNU52iaSxiupM83_f8NOw&callback=initMap"></script>
     <style> #map_ma {width:400px; height:400px; clear:both; border:solid 1px red;} </style>
 </head>
+    
 <body>
     <h1><a href="index.html">WEB</a></h1>
     <ol>
@@ -19,16 +19,11 @@
     <p>웹(web)은 기본적으로 거미줄을 뜻한다.
         월드 와이드 웹(World Wide Web)의 약자 · 웹사이트(website)
         웹(WEB)은 도널드 커누스가 제안한 프로그래밍 시스템이다
-
     </p>
+    
     <div id="map_ma"></div>
-    <script> var map; function initMap() {
-            map = new google.maps.Map(document.getElementById('map_ma'), {
-                center: { lat: 37.551073, lng: 126.987893 }, zoom: 15 }); }
+    <script>
+        var map; function initmap() {map = new google.maps.Map(document.getElementById('map_ma'), {center: {lat: 37.551073, lng: 126.987893}, zoom: 15})}
     </script>
-
-    </div>
-    <p>
-   
-</p>
+  </body>
 </html>
