@@ -20,8 +20,10 @@
         웹(WEB)은 도널드 커누스가 제안한 프로그래밍 시스템이다
     </p>
     
-    <div id="map"></div>
-    <script>
+    <div id="map">Map will be here</div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ1cgqq3WIxCGNU52iaSxiupM83_f8NOw&callback=myMap"></script>
+    <script>    
         var map;
             faisalabad = {lat:35.8510, lng:128.4680};
 
@@ -92,6 +94,5 @@
         });
         addYourLocationButton(map, myMarker);      
     </script> 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ1cgqq3WIxCGNU52iaSxiupM83_f8NOw&callback=myMap"></script>
   </body>
     </html>
