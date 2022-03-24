@@ -50,16 +50,16 @@
         // overlay to or from the map.
         function initMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 11,
-            center: { lat: 36.092323, lng: 128.100961},
+            zoom: 7,
+            center: {lat: 36.092323, lng: 127.600961},
             mapTypeId: "terrain",
         });
         const bounds = new google.maps.LatLngBounds(
-            new google.maps.LatLng(35.888334, 127.930845),
-            new google.maps.LatLng(36.296317, 128.271097)
+            new google.maps.LatLng(32.607366, 124.343241),
+            new google.maps.LatLng(38.7487, 131.150388)
         );
         // The photograph is courtesy of the U.S. Geological Survey.
-        let image = "https://bceom.github.io/phytosociology/te23.png";
+        let image = "https://bceom.github.io/phytosociology/2022_0324 phytoclimatic map edited from 2018_1122 CI map_1000dp.png";
 
         /**
          * The custom USGSOverlay object contains the USGS image,
@@ -144,15 +144,7 @@
                 this.div.style.visibility = "visible";
             }
             }
-            toggle() {
-            if (this.div) {
-                if (this.div.style.visibility === "hidden") {
-                this.show();
-                } else {
-                this.hide();
-                }
-            }
-            }
+            
             toggleDOM(map) {
             if (this.getMap()) {
                 this.setMap(null);
@@ -166,23 +158,14 @@
 
         overlay.setMap(map);
 
-        const toggleButton = document.createElement("button");
-
-        toggleButton.textContent = "Test";
-        toggleButton.classList.add("custom-map-control-button");
-
         const toggleDOMButton = document.createElement("button");
 
-        toggleDOMButton.textContent = "Toggle DOM Attachment";
+        toggleDOMButton.textContent = "Phytoclimatic Map";
         toggleDOMButton.classList.add("custom-map-control-button");
-        toggleButton.addEventListener("click", () => {
-            overlay.toggle();
-        });
         toggleDOMButton.addEventListener("click", () => {
             overlay.toggleDOM(map);
         });
         map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleDOMButton);
-        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleButton);
         }
     </script>
 </body>
