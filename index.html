@@ -63,12 +63,33 @@
             
 
             // HH. test kml 추가하기
-            const testLayer = new google.maps.KmlLayer({
-                url: "https://bceom.github.io/phytosociology/New.kmz",
+            const WTLayer = new google.maps.KmlLayer({
+                url: "https://bceom.github.io/phytosociology/WT.kmz",
                 map: map,
                 preserveViewport: true,
             });
-            testLayer.setMap(map);
+            WTLayer.setMap(map);
+
+            const SOSULayer = new google.maps.KmlLayer({
+                url: "https://bceom.github.io/phytosociology/SOSU.kmz",
+                map: map,
+                preserveViewport: true,
+            });
+            SOSULayer.setMap(map);
+
+            const CEMOLayer = new google.maps.KmlLayer({
+                url: "https://bceom.github.io/phytosociology/CEMO.kmz",
+                map: map,
+                preserveViewport: true,
+            });
+            CEMOLayer.setMap(map);
+
+            const NOALLayer = new google.maps.KmlLayer({
+                url: "https://bceom.github.io/phytosociology/NOAL.kmz",
+                map: map,
+                preserveViewport: true,
+            });
+            NOALLayer.setMap(map);
     
             // HH. 내위치 버튼 클릭 시 좌표 출력하기
             let infoWindow = new google.maps.InfoWindow();
@@ -215,10 +236,28 @@
  
             toggleDOMButton.addEventListener("click", () => {
                 overlay.toggleDOM(map);
-                if (testLayer.getMap() === null) {
-                    testLayer.setMap(map);
+                if (WTLayer.getMap() === null) {
+                    WTLayer.setMap(map);
                 } else {
-                    testLayer.setMap(null);
+                    WTLayer.setMap(null);
+                }
+
+                if (SOSULayer.getMap() === null) {
+                    SOSULayer.setMap(map);
+                } else {
+                    SOSULayer.setMap(null);
+                }
+
+                if (CEMOLayer.getMap() === null) {
+                    CEMOLayer.setMap(map);
+                } else {
+                    CEMOLayer.setMap(null);
+                }
+
+                if (NOALLayer.getMap() === null) {
+                    NOALLayer.setMap(map);
+                } else {
+                    NOALLayer.setMap(null);
                 }
             });
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(toggleDOMButton);
